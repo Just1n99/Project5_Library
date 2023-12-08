@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Library">
+    <select id="getLibrary" resultType="library">
+        select * from Library where bookID=#{bookID}
+    </select>
+    <select id="getLibraryList" resultType="library">
+        select * from Library order by bookID desc
+    </select>
+</mapper>
