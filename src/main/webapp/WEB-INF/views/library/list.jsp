@@ -28,7 +28,7 @@
             color: white;
         }
     </style>
-    <h1>연락처</h1>
+    <h1>도서관</h1>
 </head>
 <body>
 <table id="list" width="90%">
