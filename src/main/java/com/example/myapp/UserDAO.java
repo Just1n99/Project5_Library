@@ -9,6 +9,7 @@ public class UserDAO {
     @Autowired
     SqlSessionTemplate sqlSession;
     public UserVO getUser(UserVO vo){
+        
         return sqlSession.selectOne("User.getUser", vo);
     }
 }

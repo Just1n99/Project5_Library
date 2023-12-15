@@ -18,8 +18,8 @@
 </head>
 <body>
 <div style='width:100%; text-align: center; padding-top:100px'>
-    <form method="post" action="loginOk">
-        <div><label>User ID: </label><input type="text" name="userid"/></div>
+    <form action="loginOk" method="post">
+        <div><label>User ID: </label><input type="text" name="userid"></div>
         <div><label>Password: </label>
         <input type="password" name="password"/></div>
         <button type="submit">login</button>
