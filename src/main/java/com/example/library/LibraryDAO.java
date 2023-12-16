@@ -18,20 +18,12 @@ public class LibraryDAO {
     }
 
     public int deleteLibrary(int bookID){
-        String sql = "delete from Library where personID =" +bookID;
-        return sqlSession.update(sql);
+        return sqlSession.delete("Library.deleteLibrary", bookID);
     }
 
     public int updateLibrary(LibraryVO vo){
 
-        String sql = "update Library set name='" + vo.getName()+"',"
-                +"writer='" + vo.getWriter()+"',"
-                +"Publisher='" + vo.getPublisher()+"',"
-                +"classification='" + vo.getClassification()+"',"
-                +"borrow='" + vo.getBorrow()+"',"
-                +"borrower='" + vo.getBorrower()+"'where personID="+vo.getBookID();
-
-        return sqlSession.update(sql);
+        return sqlSession.update("Library.updateLibrary", vo);
     }
     public LibraryVO getLibrary(int bookID){
         LibraryVO one = sqlSession.selectOne("Library.getLibrary", bookID);

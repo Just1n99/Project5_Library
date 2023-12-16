@@ -1,7 +1,5 @@
-package com.example;
+package com.example.myapp;
 
-import com.example.myapp.UserServiceImpl;
-import com.example.myapp.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,20 +21,19 @@ public class LoginController {
     @RequestMapping(value = "/loginOk", method = RequestMethod.POST)
     public String loginCheck (HttpSession session, UserVO vo){
         String returnURL = "";
-        if (session.getAttribute("login/login") != null) {
+        if (session.getAttribute("login") != null) {
             session.removeAttribute("login");
         }
 
         UserVO loginvo = service.getUser(vo);
-
         if (loginvo != null){
             System.out.println("로그인 성공!");
             session.setAttribute("login", loginvo);
-            returnURL = "redirect:/library/list";
+            returnURL = "redirct:/library/list";
         }
         else{
             System.out.println("로그인 실패!");
-            returnURL = "redirect:/login/login";
+            returnURL = "redirct:/login/login";
         }
         return returnURL;
     }

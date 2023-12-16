@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/library")
+@RequestMapping("/library")
 public class LibraryController {
     @Autowired
     LibraryServiceImpl libraryService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String librarylist(Model model){
+    public String libraryList(Model model){
         model.addAttribute("list",libraryService.getLibraryList());
         return "library/list";
     }
@@ -40,7 +40,7 @@ public class LibraryController {
         else{
             System.out.println("데이터 추가 성공!!!");
         }
-        return "redirect:../library/list";
+        return "redirect:/library/list";
     }
 
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
