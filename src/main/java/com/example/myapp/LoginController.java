@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.example.library.LibraryVO;
-import java.util.List;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
@@ -36,9 +34,8 @@ public class LoginController {
         if (loginvo != null){
             System.out.println("로그인 성공!");
             session.setAttribute("login", loginvo);
-            List<LibraryVO> libraryList = libraryService.getLibraryList(); // Fetch library data
-            model.addAttribute("list", libraryList);
-            returnURL = "/library/list";
+            model.addAttribute("list",libraryService.getLibraryList());
+            returnURL = "redirect:/library/list";
         }
         else{
             System.out.println("로그인 실패!");

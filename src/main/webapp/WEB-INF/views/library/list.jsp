@@ -27,10 +27,12 @@
             background-color: #006bb3;
             color: white;
         }
+
     </style>
     <h1>도서관</h1>
 </head>
 <body>
+<button id="logO" type="button" onclick="location.href='${pageContext.request.contextPath}/login/logout'">Log Out</button>
 <table id="list" width="90%">
     <tr>
         <th>*</th>

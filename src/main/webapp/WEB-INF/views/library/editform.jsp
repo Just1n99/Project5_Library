@@ -15,7 +15,8 @@
         <tr><td>Classification:</td><td><input type="text" name="classification" value="${u.getClassification()}"/></td></tr>
         <tr><td>Borrow:</td><td><input type="text" name="borrow" value="${u.getBorrow()}"/></td></tr>
         <tr><td>Borrower:</td><td><input type="text" name="borrower" value="${u.getBorrower()}"/></td></tr>
-        <tr><td>Return Date:</td><td><input type="date" name="returndate" value="${u.getReturndate()}"/></td></tr>
+        <tr><td>Return Date:</td><td><input type="text" name="returndate" value="${u.getReturndate()}" disabled></td></tr>
+        <tr><td>Return Date Edit :</td><td><input type="Date" name="returndate" value="${u.getReturndate()}"/></td></tr>
     </table>
     <button type="submit">Edit</button>
 
