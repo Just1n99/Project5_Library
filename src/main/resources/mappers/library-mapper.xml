@@ -2,21 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="LibraryDAO">
+<mapper namespace="Library">
     <insert id="insertLibrary">
-        insert into Library (name, writer, publisher, classification, borrow, borrower, returnDate)
-        values(#{name}, #{writer}, #{publisher}, #{classification}, #{borrow}, #{borrower}, #{returnDate})
+        insert into Library (name, writer, publisher, classification, borrow, borrower, returndate)
+        values(#{name}, #{writer}, #{publisher}, #{classification}, #{borrow}, #{borrower}, #{returndate})
     </insert>
     <update id="updateLibrary">
         update Library
-        set name=#{name}, writer=#{writer}, publisher=#{publisher}, classification=#{classification}, borrow=#{borrow}, borrower=#{borrower}, returnDate=#{returnDate}
+        set name=#{name}, writer=#{writer}, publisher=#{publisher}, classification=#{classification}, borrow=#{borrow}, borrower=#{borrower}, returndate=#{returndate}
         where bookID=#{bookID}
     </update>
     <delete id="deleteLibrary">
-        delete from Library where bookID=#{bookId}
+        delete from Library where bookID=#{bookid}
     </delete>
     <select id="getLibrary" resultType="library">
-        select * from Library where bookID=#{bookID}
+        select * from Library where bookID=#{bookid}
     </select>
     <select id="getLibraryList" resultType="library">
         select * from Library order by bookID desc

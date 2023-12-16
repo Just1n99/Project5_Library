@@ -19,6 +19,6 @@
     </table>
     <button type="submit">Edit</button>
 
-    <input type="button" value="Reset" onclick="history"/>
+    <input type="button" value="Go Back" onclick="location.href='${pageContext.request.contextPath}/library/list'"/>
 </form>
 </html>

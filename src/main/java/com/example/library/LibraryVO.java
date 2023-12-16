@@ -1,5 +1,6 @@
 package com.example.library;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class LibraryVO {
@@ -10,6 +11,7 @@ public class LibraryVO {
     private String classification;
     private String borrow;
     private String borrower;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date returndate;
 
     public int getBookID() {

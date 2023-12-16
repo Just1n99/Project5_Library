@@ -29,11 +29,11 @@ public class LoginController {
         if (loginvo != null){
             System.out.println("로그인 성공!");
             session.setAttribute("login", loginvo);
-            returnURL = "redirct:/library/list";
+            returnURL = "/library/list";
         }
         else{
             System.out.println("로그인 실패!");
-            returnURL = "redirct:/login/login";
+            returnURL = "/login/login";
         }
         return returnURL;
     }

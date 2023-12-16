@@ -55,12 +55,12 @@
             <td>${u.getBorrow()}</td>
             <td>${u.getBorrower()}</td>
             <td>${u.getReturndate()}</td>
-            <td><a href="editform/${u.personID}">Edit</a></td>
-            <td><a href="desktop/${u.personID}">Delete</a></td>
-            <td><a href="posts/${u.personID}">View</a></td>
+            <td><a href="editform/${u.bookID}">Edit</a></td>
+            <td><a href="desktop/${u.bookID}">Delete</a></td>
+            <td><a href="posts/${u.bookID}">View</a></td>
         </tr>
     </c:forEach>
 </table>
-<br/><button type="button" onclick="location.href='add'">새글쓰기</button>
+<br/><button type="button" onclick="location.href='${pageContext.request.contextPath}/library/add'">새글쓰기</button>
 </body>
 </html>
