@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<style>
+    .alert {
+        text-align: center;
+    }
+</style>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -25,6 +30,10 @@
         <button type="submit">login</button>
     </form>
 </div>
+
+<c:if test="${not empty error}">
+    <div class="alert alert-danger">${error}</div>
+</c:if>
 
 </body>
 </html>
